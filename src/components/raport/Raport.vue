@@ -25,23 +25,36 @@ data(){
         ]
     } 
 },
+watch:{
+ angle: function(){
+        var canvas = document.getElementById("canvas2");
+        var context = canvas.getContext("2d"); 
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.save();
+        context.translate(250,250); // устанавливаем начало координат в конец отрезка
+        context.rotate(this.radian) // поворачиваем начало координат
+        this.Line(context,0,0,140,0,7);
+        context.restore();
+  }
+},
 methods:{
     onClick(){
         var canvas = document.getElementById("canvas2");
-        var sky = canvas.getContext("2d"); 
-        sky.clearRect(0, 0, canvas.width, canvas.height);
-        sky.save();
-        sky.translate(250,250); // устанавливаем начало координат в конец отрезка
-        sky.rotate(this.radian) // поворачиваем начало координат
-        this.Line(sky);
-        sky.restore();
+        var context = canvas.getContext("2d"); 
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.save();
+        context.translate(250,250); // устанавливаем начало координат в конец отрезка
+        context.rotate(this.radian) // поворачиваем начало координат
+        this.Line(context,0,0,140,0,7);
+        context.restore();
     },
-    Line(context){
+    Line(context,xSt,ySt,xEn,yEn,w){
         context.beginPath();
-        context.lineWidth = 7; //
+        context.lineWidth = w; //
         context.strokeStyle = "red";
-        context.moveTo(0, 0);
-        context.lineTo(140, 0);
+        context.lineCap='round'; // скругление концов линии
+        context.moveTo(xSt, ySt);
+        context.lineTo(xEn, yEn);
         context.stroke();
     },
     Arc(context,x,y,r,angleStart,angleEnd,color){
@@ -66,10 +79,19 @@ computed:{
                this.arcArray[i].r, this.arcArray[i].angleStart,
                this.arcArray[i].angleEnd, this.arcArray[i].color);
     }
+    for (let i = 180; i<=360; i+=2) {
+        context.save();
+        context.translate(250,250); // устанавливаем начало координат в конец отрезка
+        context.rotate(i*(Math.PI/180)) // поворачиваем начало координат
+        if(i % 10 == 0){
+         this.Line(context,145,0,165,0,1); 
+         context.fillText('2', 140, 100);  
+        } else {
+         this.Line(context,155,0,165,0,1);
+        }     
+        context.restore();
+    }
 
-  
-    
-  
     context.beginPath();
     context.arc(250,250,5,(Math.PI/180)*0,(Math.PI/180)*360);
     context.lineWidth = 12;
