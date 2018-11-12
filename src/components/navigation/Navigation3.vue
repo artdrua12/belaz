@@ -74,7 +74,11 @@
 div.app{
   display: flex;
   /* background-color:rgba(8, 8, 8, 1); */
- background: linear-gradient(rgb(57, 57, 59), rgb(39, 40, 43)) rgb(79, 80, 83);
+  background: linear-gradient(rgb(71, 72, 77), rgb(56,57,62)) rgb(64, 65, 70);
+    box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
 }
 div.item{
   display: flex;
@@ -86,6 +90,10 @@ div.item{
    0 2px rgba(255,255,255,.2) inset,
    0 3px 5px rgba(0,1,6,.5),
    0 0 1px 1px rgba(0,1,6,.2);
+   
+   -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 i{
   transition-property: font-size;
