@@ -35,7 +35,7 @@ watch:{
         context.rotate(this.radian) // поворачиваем начало координат
         this.Line(context,0,0,140,0,7);
         context.restore();
-  }
+ }
 },
 methods:{
     onClick(){
@@ -83,9 +83,8 @@ computed:{
         context.save();
         context.translate(250,250); // устанавливаем начало координат в конец отрезка
         context.rotate(i*(Math.PI/180)) // поворачиваем начало координат
-        if(i % 10 == 0){
-         this.Line(context,145,0,165,0,1); 
-         context.fillText('2', 140, 100);  
+        if(i % 5 == 0){
+         this.Line(context,145,0,165,0,1);          
         } else {
          this.Line(context,155,0,165,0,1);
         }     

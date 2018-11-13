@@ -6,6 +6,7 @@ import 'vuetify/dist/vuetify.min.css'
 import * as VueGoogleMaps from "vue2-google-maps";
 import store from './store'
 
+
 import compdefault from './components/default/Default.vue'
 import googleMap  from './components/map/GoogleMap3.vue'
 import googleMap2  from './components/map/GoogleMap2.vue'
@@ -16,7 +17,7 @@ import raport from './components/raport/Raport.vue'
 import YmapPlugin from 'vue-yandex-maps'
 Vue.use(YmapPlugin)
 Vue.use(VueRouter);
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 Vue.use(VueGoogleMaps, {
   load: {
