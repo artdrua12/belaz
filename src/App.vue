@@ -29,6 +29,9 @@ export default {
 </script>
 
 <style>
+html{
+  overflow: hidden;
+}
 div#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   width: 100%;
