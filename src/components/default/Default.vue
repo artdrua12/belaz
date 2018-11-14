@@ -34,7 +34,7 @@
 export default {
   data () {
     return {
-   valid: false,
+    valid: false,
     login: '',
     nameRules: [
       v => !!v || 'Введите логин',
