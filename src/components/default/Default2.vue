@@ -74,7 +74,7 @@ div.registration{
     grid-column: 2 / 3;
     grid-row: 2 / 3; 
     z-index: 2;
-    width: 420px;
+    width: 440px;
     height: 450px;
     background: linear-gradient(rgba(92, 93, 97, 0.7), rgba(56, 56, 59, 0.5)) rgba(18, 18, 19, 0.6);
     box-shadow:
@@ -105,14 +105,14 @@ span.top {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 span.center{
-    font-size: 2.5rem;
-    color: yellow;
+    font-size: 2.2rem;
+    color: rgb(255, 217, 0);
     /* color: aliceblue */
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
 i{
-    color: yellow;
+    color: rgb(255, 217, 0);
     font-size: 50px;
     margin-right: 10px;
 }
