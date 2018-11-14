@@ -3,7 +3,9 @@
     <div class="wrapper" :class="{blur:watchFocus}"></div>
     <div class="text"  ></div>
     <div class="registration"  @click="onFocus">
-        <spa
+        <span class="top">Пройдите авторизацию</span>
+        <i class="material-icons">verified_user</i>
+        <span class="center">Авторизация</span>
         <v-form v-model="valid">  
           <v-text-field class="inputText"
             v-model="login"
@@ -72,22 +74,19 @@ div.registration{
     grid-column: 2 / 3;
     grid-row: 2 / 3; 
     z-index: 2;
-    width: 450px;
+    width: 420px;
     height: 450px;
     background: linear-gradient(rgba(92, 93, 97, 0.7), rgba(56, 56, 59, 0.5)) rgba(18, 18, 19, 0.6);
     box-shadow:
     0 1px rgba(255,255,255,.2) inset,
-    0 3px 50px rgba(0,1,6,.5),
-    0 0 1px 1px rgba(0,1,6,.2);
-    border: 1px rgba(88, 89, 95, 0.5) solid;
+    0 3px 5px rgba(0,1,6,.5),
+    0 0 10px 10px rgba(0,1,6,.2);
+    border: 1px rgb(248, 248, 245) solid;
+    padding: 35px 32px 10px 30px;
     border-radius: 12px;
-    padding: 40px 25px 10px 20px;
 }
 .blur {
   filter: blur(20px); 
-}
-.v-input  v-text-field theme--light{
-    color: white;
 }
 .inputText{
    color: white;
@@ -98,7 +97,24 @@ div.registration{
    0 2px 3px rgba(0,0,0,.5) inset,
    0 1px 1px rgba(255,255,255,.1);
    padding: 20px 25px 10px 10px;
-   margin-top: 15px;
-    border-radius: 12px;
+   margin-top: 25px;
+   border-radius: 12px;
 }
+span.top {
+    color: aliceblue;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+span.center{
+    font-size: 2.5rem;
+    color: yellow;
+    /* color: aliceblue */
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+i{
+    color: yellow;
+    font-size: 50px;
+    margin-right: 10px;
+}
+
 </style>
