@@ -106,7 +106,7 @@ span{
 color: white;
 font-size: 12px;
 margin-top: -4px;
-color: rgb(241, 215, 67);
+color: rgb(255, 255, 0);
   text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
 }
 a {
@@ -129,7 +129,7 @@ div.item:active{
   transition-property: font-size;
   transition-duration: 0.5s;
   font-size: 47px;
-  color: rgb(241, 215, 67);
+  color: rgb(255, 255, 0);
   
 }
 
