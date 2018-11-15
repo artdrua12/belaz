@@ -19,7 +19,7 @@
           { title: 'КАРТА', icon: 'location_on',to:"/map"},
           { title: 'АДМИН', icon: 'how_to_reg',to:"/admin"},
           { title: 'ММБ', icon: 'dashboard',to:"/mmb"},
-          { title: 'Машины', icon: 'local_shipping',to:"/d"},
+          { title: 'Машины', icon: 'local_shipping',to:"/car"},
           { title: 'Польз', icon: 'people',to:"/e"},
           { title: 'ОТЧЕТ', icon: 'poll',to:"/raport" },
           { title: 'КЛАСС', icon: 'category',to:"/g" }
