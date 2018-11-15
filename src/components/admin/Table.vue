@@ -6,8 +6,16 @@
         label="Search"
         hide-details
     ></v-text-field>
+
+    <select v-model="pagination.rowsPerPage" class="selct">
+      <option value="5">5</option>
+      <option value="7">7</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+
     <v-pagination color="rgb(92, 93, 97)" v-model="pagination.page"
-    class="pagin" :length="pages" ></v-pagination>
+    class="pagnt" :length="pages"></v-pagination>
     <v-data-table class="tbl"
       :hide-actions="true"
       :headers="headers"
@@ -35,6 +43,7 @@
     data () {
       return {
         search: '',
+        selected:"",
         pagination: {
             descending: true,
             page: 1,
@@ -257,14 +266,32 @@ div.app{
     grid-template-columns: 300px auto 1fr ;
     grid-template-rows: 50px auto;
 }
+.pagnt{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-items: end; 
+}
+.selct{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2; 
+    width: 50px;
+    height: 40px;
+    align-items: end; 
+    border-radius: 5px;
+    margin-top: 7px;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow:
+   0 1px rgba(255,255,255,.2) inset,
+   0 1px 3px rgba(0,1,6,.5),
+   0 0 1px 1px rgba(0,1,6,.2);
+}
 .serch{
     grid-column: 3 / 4;
     grid-row: 1 / 2; 
     overflow: hidden;
-}
-.pad{
-    grid-column: 1 / 2;
-    grid-row: 1 / 2; 
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .tbl{
     grid-column: 1 / 4;
@@ -273,6 +300,7 @@ div.app{
 table.v-table tbody td, tbody th{
   font-size: 18px;
 }
+
 .v-pagination__item:active, .v-pagination__item--active{ 
   border: none !important;
   outline: none !important;
