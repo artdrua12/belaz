@@ -10,7 +10,6 @@ import store from './store'
 import compdefault from './components/default/Default2.vue'
 import googleMap  from './components/map/GoogleMap3.vue'
 import googleMap2  from './components/map/GoogleMap2.vue'
-import comptable  from './components/table/Table.vue'
 import admin  from './components/admin/Table.vue'
 import raport from './components/raport/Raport.vue'
 

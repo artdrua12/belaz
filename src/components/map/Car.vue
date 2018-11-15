@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import CarTable from '../table/Table.vue'
 import CarItem from './CarItem.vue'
   export default {
     data () {
@@ -73,7 +72,6 @@ import CarItem from './CarItem.vue'
       }
     },
    components: {
-   CarTable,
    CarItem
   }
   }
