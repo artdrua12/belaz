@@ -92,8 +92,8 @@ div.item{
    0 0 1px 1px rgba(0,1,6,.2);
    
    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
 }
 i{
   transition-property: font-size;
@@ -103,10 +103,10 @@ i{
   border-radius: 5px;
 }
 span{
-color: white;
-font-size: 12px;
-margin-top: -4px;
-color: rgb(255, 217, 0);
+  color: white;
+  font-size: 12px;
+  margin-top: -4px;
+  color: rgb(255, 217, 0);
   text-shadow: 0 1px rgba(255,255,255,.2), 0 -1px rgba(0,0,0,.8);
 }
 a {

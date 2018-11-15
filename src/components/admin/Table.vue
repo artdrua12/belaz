@@ -7,7 +7,7 @@
         hide-details
     ></v-text-field>
     <v-pagination color="rgb(92, 93, 97)" v-model="pagination.page"
-    class="pagin" :length="pages"></v-pagination>
+    class="pagin" :length="pages" ></v-pagination>
     <v-data-table class="tbl"
       :hide-actions="true"
       :headers="headers"
@@ -251,6 +251,7 @@
 </script>
 
 <style scoped>
+
 div.app{
     display: grid;
     grid-template-columns: 300px auto 1fr ;
@@ -268,5 +269,12 @@ div.app{
 .tbl{
     grid-column: 1 / 4;
     grid-row: 2 / 3;  
+}
+table.v-table tbody td, tbody th{
+  font-size: 18px;
+}
+.v-pagination__item:active, .v-pagination__item--active{ 
+  border: none !important;
+  outline: none !important;
 }
 </style>
