@@ -1,12 +1,13 @@
 <template>
 <div class="app">
-  <div class="show">dsfd</div>
+  <cards class="show"></cards>
   <table-data class="tableData"></table-data>
 </div>
 </template>
 
 <script>
-import TableData from './Table.vue'
+import tableData from './Table.vue'
+import cards from './Cards.vue'
 export default {
   data () {
     return {
@@ -14,7 +15,8 @@ export default {
     }
   },
   components: {
-    TableData
+    tableData,
+    cards
    }
   }
 </script>
@@ -23,7 +25,7 @@ export default {
 div.app{
   display:grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto 1fr;
 }
 .show{
   grid-column: 1 / 2;
@@ -31,6 +33,6 @@ div.app{
 }
 .tableData{
   grid-column: 1 / 2;
-  grid-row: 3 / 3; 
+  grid-row: 2 / 3; 
 }
 </style>

@@ -11,7 +11,7 @@ import compdefault from './components/default/Default2.vue'
 import googleMap  from './components/map/GoogleMap3.vue'
 import googleMap2  from './components/map/GoogleMap2.vue'
 import admin  from './components/admin/Admin.vue'
-import card from './components/admin/Card.vue'
+import cards from './components/admin/Cards.vue'
 import raport from './components/raport/Raport.vue'
 
 import YmapPlugin from 'vue-yandex-maps'
@@ -34,7 +34,7 @@ var router = new VueRouter({
     {path: '/map', component: googleMap},
     {path: '/admin', component: admin},
     {path: '/mmb', component: googleMap2},
-    {path: '/car', component: card},
+    {path: '/car', component: cards},
     {path: '/raport', component: raport}
   ]
 })
