@@ -2,9 +2,9 @@
   <div class="app">
       <div class="screen"></div>
       <div class="store">
-            <div class="item" v-for="n in 10" :key="n" @click="onClick">
-                {{ n }} 
-            </div>   
+         <div class="item" v-for="n in 10" :key="n" @click="onClick">
+            {{ n }} 
+         </div>   
       </div>
       <div ref="wndws" class="frame"></div>
   </div>
@@ -52,8 +52,8 @@ div.frame{
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     z-index: 2;
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 150px;
     position:absolute;
     background-color: bisque;
     top:10px;
