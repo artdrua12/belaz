@@ -2,12 +2,11 @@
   <div class="app">
       <div class="screen"></div>
       <div class="store">
-         <div class="item" v-for="n in 9" :key="n" @click="onClick">
-            {{ n }} 
+         <div class="item" v-for="(item,i) in array" :key="i" @click="onClick">
+            {{ item }} 
          </div>   
       </div>
       <div ref="wndws" class="wndws slide"></div>
-
   </div>
 </template>
 
@@ -16,7 +15,12 @@ export default {
   data(){
    return{
      oldElement:null,
-     show: false
+     show: false,
+     array:["Добавить новый модуль","Добавить новую машину",
+            "Добавить машину","Добавить экплотирующую организацию",
+            "Добавить обслуживающую организацию","Добавить пользователя",
+            "Заблокировать пользователя","Разблокировать пользователя",
+            "Редактировать пользователя","Удалить пользователя" ]
     }
   },
   methods:{
@@ -28,7 +32,8 @@ export default {
        let xy=el.getBoundingClientRect();
 
        this.oldElement = event.target;
-       wndws.style.width=el.clientWidth +"px";
+       wndws.style.opacity=1;
+       wndws.style.width=el.clientWidth +"px"; // задаем ширину блока
        wndws.style.height=el.clientHeight +"px";
        wndws.classList.remove("slide");
        wndws.style.left=(xy.left) +"px";
@@ -38,6 +43,10 @@ export default {
         w.classList.add("slide");
         w.style.left="0px";
         w.style.top="0px";
+       setTimeout(()=>{
+           w.style.width="500px";
+           w.style.height="350px"
+         },500)
         } 
        setTimeout(func,100,wndws);
     }
@@ -75,9 +84,10 @@ div.wndws{
     grid-row: 1 / 2;
     z-index: 3;
     width: 150px;
-    height: 150px;
+    height: 100%;
     position:relative;
     background-color:red;
+    opacity: 0;
 }
 div.item{
     height: 150px;
@@ -85,8 +95,8 @@ div.item{
     /* margin: 0px 0px 5px 5px */
 }
 .slide{
-    transition-property: left, top;
-    transition-duration:  0.5s, 0.5s;   
+    transition-property: left, top,width,height;
+    transition-duration:  0.5s, 0.5s,0.5s, 0.5s;   
 }
 </style>
 
