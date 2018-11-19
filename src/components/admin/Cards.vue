@@ -14,6 +14,8 @@
 export default {
   data(){
    return{
+     left:0,
+     top:0,
      oldElement:null,
      show: false,
      array:["Добавить новый модуль","Добавить новую машину",
@@ -30,14 +32,14 @@ export default {
        let wndws = this.$refs.wndws;    
        el.style.opacity = '0';
        let xy=el.getBoundingClientRect();
+       console.log(event);
 
        this.oldElement = event.target;
-       wndws.style.opacity=1;
-       wndws.style.width=el.clientWidth +"px"; // задаем ширину блока
-       wndws.style.height=el.clientHeight +"px";
+       wndws.style.width=xy.width +"px"; // задаем ширину блока
+       wndws.style.height=xy.height +"px";
+       wndws.style.left=(xy.left - this.left) +"px";
+       wndws.style.top=(xy.top - this.top) +"px";
        wndws.classList.remove("slide");
-       wndws.style.left=(xy.left) +"px";
-       wndws.style.top=(xy.top) +"px";
        
       function func(w) {
         w.classList.add("slide");
@@ -45,11 +47,16 @@ export default {
         w.style.top="0px";
        setTimeout(()=>{
            w.style.width="500px";
-           w.style.height="350px"
+           w.style.height="300px"
          },500)
         } 
        setTimeout(func,100,wndws);
     }
+  },
+  mounted(){
+        let topLeft=this.$refs.wndws.getBoundingClientRect();
+        this.top=topLeft.top;
+        this.left=topLeft.left;
   }
 }
 </script>
@@ -82,12 +89,11 @@ div.app{
 div.wndws{
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-    z-index: 3;
+    z-index: 1;
     width: 150px;
     height: 100%;
-    position:relative;
+    position: relative;
     background-color:red;
-    opacity: 0;
 }
 div.item{
     height: 150px;
