@@ -265,6 +265,7 @@ div.app{
     display: grid;
     grid-template-columns: 300px auto 1fr ;
     grid-template-rows: 50px auto;
+    overflow: auto;
 }
 .pagnt{
     grid-column: 1 / 2;

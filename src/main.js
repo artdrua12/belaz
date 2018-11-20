@@ -9,7 +9,7 @@ import store from './store'
 
 import compdefault from './components/default/Default2.vue'
 import googleMap  from './components/map/GoogleMap3.vue'
-import googleMap2  from './components/map/GoogleMap2.vue'
+import googleMap2  from './components/map/GoogleMap4.vue'
 import admin  from './components/admin/Admin2.vue'
 import cards from './components/admin/Cards.vue'
 import raport from './components/raport/Raport.vue'

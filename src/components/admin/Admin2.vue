@@ -49,28 +49,31 @@ export default {
 div.app{
   display:grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(auto 90%) ;
   gap: 7px;
   background-color: rgb(243, 240, 233);
+  align-items: start;
+  overflow: hidden;
 }
 .screen{
  grid-column: 1 / 2;
  grid-row: 1 / 3;
- width: 500px;
- height: 100%;
  background-color: rgb(246, 255, 127);
  padding: 10px;
+ height: 100%;
+ min-width: 400px;
 }
 .cards{
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 7px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 7px;
 }
 .tableData{
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+  height: 100%;
 }
 div.moved{
     position: relative;
