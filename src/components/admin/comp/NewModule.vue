@@ -59,7 +59,7 @@ button {
     }
 div.v-menu__content, div.menuable__content__active{
     top:0px!important;
-    left:0px!important;
+    left:100px!important;
 }
 </style>
 

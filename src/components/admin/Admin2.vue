@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     movedDiv(event) {
-      let xy=event.getBoundingClientRect();
-      this.currentComp=event.id;
+      let xy = event.getBoundingClientRect(); //  получаем координаты блока по которому кликнули
+      this.currentComp = "";
       let moved = this.$refs.moved;
       moved.classList.remove("slide");
       moved.style.left = xy.left - this.left + "px";
@@ -47,6 +47,13 @@ export default {
         moved.style.left = 0 + "px";
         moved.style.top = 0 + "px";
       }, 100);
+      setTimeout(() => {
+        moved.style.width = 450 + "px";
+        moved.style.height = 700 + "px";
+      }, 200);
+      setTimeout(() => {
+        this.currentComp = event.id;
+      }, 400);
     }
   },
   mounted() {
@@ -73,7 +80,7 @@ export default {
 <style scoped>
 div.app {
   display: grid;
-  grid-template-columns: minmax(auto,470px)  1fr;
+  grid-template-columns: minmax(auto, 470px) 1fr;
   grid-template-rows: auto 1fr;
   gap: 7px;
   background-color: rgb(243, 240, 233);
@@ -106,9 +113,8 @@ div.moved {
 .slide {
   position: relative;
   transition-property: left, top, width, height;
-  transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+  transition-duration: 0.5s, 0.5s, 0.7s, 0.7s;
 }
-.copmt{
-
+.copmt {
 }
 </style>

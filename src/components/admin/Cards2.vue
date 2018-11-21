@@ -1,7 +1,8 @@
 <template>
   <div class="app">
      <div class="item" v-for="(item,i) in array" :key="i" @click="onClick" :id="item.comp">
-        {{ item.title }} 
+        <p>{{ item.title }}</p> 
+        <i class="material-icons">{{item.icon}}</i>
     </div>   
   </div>
 </template>
@@ -11,16 +12,44 @@ export default {
   data() {
     return {
       oldElement: null,
-      array: [       
-        { title: "Добавить новый модуль", comp: "newModule", icon:"" },
-        { title: "Добавить новую машину", comp: "newCar", icon:""  },
-        { title: "Добавить экплотирующую организацию", comp: "exportOrganz", icon:""  },
-        { title: "Добавить обслуживающую организацию", comp: "serveOrganz", icon:""  },
-        { title: "Добавить пользователя", comp: "addUser", icon:""  },
-        { title: "Заблокировать пользователя", comp: "blockUser", icon:""  },
-        { title: "Разблокировать пользователя", comp: "anBlockUser", icon:""  },
-        { title: "Редактировать пользователя", comp: "changeUser", icon:""  },
-        { title: "Удалить пользователя", comp: "removeUser", icon:""  }
+      array: [
+        {
+          title: "Добавить новый модуль",
+          comp: "newModule",
+          icon: "dashboard"
+        },
+        {
+          title: "Добавить новую машину",
+          comp: "newCar",
+          icon: "local_shipping"
+        },
+        {
+          title: "Добавить экплотирующую организацию",
+          comp: "exportOrganz",
+          icon: "local_shipping"
+        },
+        {
+          title: "Добавить обслуживающую организацию",
+          comp: "serveOrganz",
+          icon: "local_shipping"
+        },
+        { title: "Добавить пользователя", comp: "addUser", icon: "people" },
+        {
+          title: "Заблокировать пользователя",
+          comp: "blockUser",
+          icon: "people"
+        },
+        {
+          title: "Разблокировать пользователя",
+          comp: "anBlockUser",
+          icon: "people"
+        },
+        {
+          title: "Редактировать пользователя",
+          comp: "changeUser",
+          icon: "people"
+        },
+        { title: "Удалить пользователя", comp: "removeUser", icon: "people" }
       ]
     };
   },
@@ -45,7 +74,10 @@ div.app {
 
 div.item {
   height: 120px;
-  background-color: aquamarine;
+  color: white;
+  background: linear-gradient(rgb(71, 72, 77), rgb(56, 57, 62)) rgb(64, 65, 70);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset,
+    0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 </style>
 
