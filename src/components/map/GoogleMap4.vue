@@ -6,6 +6,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -31,16 +32,21 @@ export default {
       zoom: 12,
       center: { lat: 59.93, lng: 30.32 }
     });
-
-    this.markers.forEach(marker => {
-      marker.map = this.map;
-      marker.position = new google.maps.LatLng(
-        marker.position.latitude,
-        marker.position.longitude
-      );
-      new google.maps.Marker(marker);
-    });
-
+    for (let i = 0; i < this.markers.length; i++) {
+      new google.maps.Marker({
+        position: new google.maps.LatLng(
+          this.markers[i].position.latitude,
+          this.markers[i].position.longitude
+        ),
+        title: "Hello World!",
+        map: this.map,
+        animation: google.maps.Animation.DROP,
+        icon: {
+          url: "src/components/map/icon.png",
+          scaledSize: new google.maps.Size(64, 55)
+        }
+      });
+    }
   },
   methods: {
     add() {
