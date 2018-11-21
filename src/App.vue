@@ -29,6 +29,11 @@ export default {
 </script>
 
 <style>
+/* для select */
+div.v-menu__content, div.menuable__content__active{
+    top:0px!important;
+    left:-400px!important;
+}
 html{
   overflow: hidden;
 }

@@ -1,8 +1,8 @@
 <template>
 <div class="app">
   <div class="screen">
-     <div class="moved" ref="moved"></div>
-    <component v-bind:is="currentComp" class="moved"></component>
+     <div class="moved" ref="moved"><component v-bind:is="currentComp" class="compt"></component></div>
+     
   </div>
   <cards class="cards" @moved="movedDiv"></cards>
   <table-data class="tableData"></table-data>
@@ -29,7 +29,7 @@ export default {
       oldElement: null,
       top: 0,
       left: 0,
-      currentComp: "newCar"
+      currentComp: ""
     };
   },
   methods: {
@@ -73,8 +73,8 @@ export default {
 <style scoped>
 div.app {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto minmax(auto 90%);
+  grid-template-columns: minmax(auto,470px)  1fr;
+  grid-template-rows: auto 1fr;
   gap: 7px;
   background-color: rgb(243, 240, 233);
   align-items: start;
@@ -84,9 +84,8 @@ div.app {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   background-color: rgb(246, 255, 127);
-  padding: 10px;
   height: 100%;
-  min-width: 400px;
+  min-width: 320px;
 }
 .cards {
   grid-column: 2 / 3;
@@ -102,13 +101,14 @@ div.app {
 }
 div.moved {
   position: relative;
-  width: 100%;
-  height: 70%;
   background-color: red;
 }
 .slide {
   position: relative;
   transition-property: left, top, width, height;
   transition-duration: 0.5s, 0.5s, 0.5s, 0.5s;
+}
+.copmt{
+
 }
 </style>
