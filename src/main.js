@@ -2,15 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuetify from 'vuetify'
 import VueRouter from 'vue-router'
-import 'vuetify/dist/vuetify.min.css' 
+import 'vuetify/dist/vuetify.min.css'
 import * as VueGoogleMaps from "vue2-google-maps";
 import store from './store'
 
 
 import compdefault from './components/default/Default2.vue'
-import googleMap  from './components/map/GoogleMap3.vue'
-import googleMap2  from './components/map/GoogleMap4.vue'
-import admin  from './components/admin/Admin2.vue'
+import googleMap from './components/map/GoogleMap3.vue'
+import googleMap2 from './components/map/GoogleMap4.vue'
+import admin from './components/admin/Admin2.vue'
 import cards from './components/admin/Cards.vue'
 import raport from './components/raport/Raport.vue'
 
@@ -30,12 +30,12 @@ Vue.use(VueGoogleMaps, {
 var router = new VueRouter({
   mode: 'history',
   routes: [
-    {path: '/', component: compdefault},
-    {path: '/map', component: googleMap},
-    {path: '/admin', component: admin},
-    {path: '/mmb', component: googleMap2},
-    {path: '/car', component: cards},
-    {path: '/raport', component: raport}
+    { path: '/', component: compdefault },
+    { path: '/map', component: googleMap },
+    { path: '/admin', component: admin },
+    { path: '/mmb', component: googleMap2 },
+    { path: '/car', component: cards },
+    { path: '/raport', component: raport }
   ]
 })
 
