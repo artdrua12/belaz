@@ -41,12 +41,6 @@ export default {
       new google.maps.Marker(marker);
     });
 
-    this.markerImage = new google.maps.MarkerImage(
-      "http://filter.euroelement.com/upload/iblock/896/896bea54c8ca2b753a5e62f86f64da90.png",
-      new google.maps.Size(50, 32),
-      new google.maps.Point(0, 0),
-      new google.maps.Point(0, 32)
-    );
   },
   methods: {
     add() {
