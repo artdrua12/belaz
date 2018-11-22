@@ -49,11 +49,11 @@ export default {
       }, 100);
       setTimeout(() => {
         moved.style.width = 450 + "px";
-        moved.style.height = 700 + "px";
+        moved.style.height = 100 + "%";
       }, 200);
       setTimeout(() => {
         this.currentComp = event.id;
-      }, 400);
+      }, 370);
     }
   },
   mounted() {
@@ -80,9 +80,10 @@ export default {
 <style scoped>
 div.app {
   display: grid;
-  grid-template-columns: minmax(auto, 470px) 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
-  gap: 7px;
+  grid-column-gap: 2px;
+  grid-row-gap: 7px;
   background-color: rgb(243, 240, 233);
   align-items: start;
   overflow: hidden;
@@ -90,9 +91,10 @@ div.app {
 .screen {
   grid-column: 1 / 2;
   grid-row: 1 / 3;
-  background-color: rgb(246, 255, 127);
+  background-image: url(./image.jpg);
+  background-repeat: repeat;
   height: 100%;
-  min-width: 320px;
+  width: 450px;
 }
 .cards {
   grid-column: 2 / 3;
@@ -108,13 +110,16 @@ div.app {
 }
 div.moved {
   position: relative;
-  background-color: red;
+  background: linear-gradient(rgba(131, 130, 126, 0.7), rgba(75, 75, 70, 0.2))
+    rgba(19, 19, 18, 0.6);
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(0, 1, 6, 0.5),
+    0 0 10px 10px rgba(0, 1, 6, 0.2);
+  border: 1px rgb(248, 248, 245) solid;
+  box-shadow: 0px 0px 20px -5px #ffffff inset
 }
 .slide {
   position: relative;
   transition-property: left, top, width, height;
   transition-duration: 0.5s, 0.5s, 0.7s, 0.7s;
-}
-.copmt {
 }
 </style>

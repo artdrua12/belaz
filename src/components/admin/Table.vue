@@ -47,7 +47,7 @@
         pagination: {
             descending: true,
             page: 1,
-            rowsPerPage: 5,
+            rowsPerPage: 15,
             sortBy:"",
             totalItems: 20
         },

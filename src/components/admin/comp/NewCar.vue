@@ -9,6 +9,7 @@
             name="login" 
             label="Введите серийный номер"
             required
+            dark
         ></v-text-field> 
 
         <v-select
@@ -31,6 +32,7 @@
             label="Дата производства"
             prepend-icon="event"
             readonly
+            dark
             ></v-text-field>
             <v-date-picker v-model="date" no-title scrollable>
             <v-spacer></v-spacer>
@@ -58,7 +60,7 @@
             <v-date-picker v-model="date2" no-title scrollable>
             <v-spacer></v-spacer>
             <v-btn flat color="primary" @click="menu2 = false">Cancel</v-btn>
-            <v-btn flat color="primary" @click="$refs.menu2.save(date)">OK</v-btn>
+            <v-btn flat color="primary" @click="$refs.menu2.save(date2)">OK</v-btn>
             </v-date-picker>
         </v-menu>
 
@@ -105,6 +107,7 @@ p {
 button {
     float:right;
     margin-right: -5px;
+    margin-top: 25px;
     }
 div.v-menu__content, div.menuable__content__active{
     top:0px!important;

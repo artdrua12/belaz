@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     add() {
+      this.map.setCenter({lat: 59.9, lng: 30.4})
       new google.maps.Marker({
         position: new google.maps.LatLng(59.9, 30.4),
         title: "Hello World!",

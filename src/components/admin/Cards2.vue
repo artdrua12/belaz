@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-     <div class="item" v-for="(item,i) in array" :key="i" @click="onClick" :id="item.comp">
-        <p>{{ item.title }}</p> 
+     <div class="item" v-for="(item,i) in array" :key="i" @click="onClick(item.comp)" :id="item.comp">
         <i class="material-icons">{{item.icon}}</i>
+        <p>{{ item.title }}</p> 
     </div>   
   </div>
 </template>
@@ -54,12 +54,19 @@ export default {
     };
   },
   methods: {
-    onClick(event) {
+    onClickOLD(event) {
       this.oldElement ? (this.oldElement.style.opacity = "1") : "";
       let el = event.target;
       el.style.opacity = "0";
       this.$emit("moved", el);
       this.oldElement = el;
+    },
+    onClick(id) {
+      let element = document.getElementById(id);
+      this.oldElement ? (this.oldElement.style.opacity = "1") : "";
+      element.style.opacity = "0";
+      this.$emit("moved", element);
+      this.oldElement = element;
     }
   }
 };
@@ -75,9 +82,23 @@ div.app {
 div.item {
   height: 120px;
   color: white;
-  background: linear-gradient(rgb(71, 72, 77), rgb(56, 57, 62)) rgb(64, 65, 70);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset,
-    0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(rgba(131, 130, 126, 0.7), rgba(75, 75, 70, 0.2))
+    rgba(19, 19, 18, 0.6);
+  box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(0, 1, 6, 0.5),
+    0 0 5px 3px rgba(0, 1, 6, 0.2),
+    0px 0px 12px -5px #ffffff inset;
+  border: 1px rgb(248, 248, 245) solid;
+  padding: 20px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 </style>
 
