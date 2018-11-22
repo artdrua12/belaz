@@ -1,12 +1,11 @@
 <template>
-  <div class="app">
+  <div class="mapCar">
       <div class="google-map" id="map"></div>
       <v-btn @click="add"></v-btn>  
   </div>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -50,7 +49,7 @@ export default {
   },
   methods: {
     add() {
-      this.map.setCenter({lat: 59.9, lng: 30.4})
+      this.map.setCenter({ lat: 59.9, lng: 30.4 });
       new google.maps.Marker({
         position: new google.maps.LatLng(59.9, 30.4),
         title: "Hello World!",
@@ -66,9 +65,13 @@ export default {
 };
 </script>
 <style scoped>
+div.mapCar {
+  widows: 100%;
+  height: 100%;
+}
 .google-map {
-  width: 940px;
-  height: 780px;
+  width: 100%;
+  height: 90%;
   margin: 0 auto;
   background: gray;
 }
