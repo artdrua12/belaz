@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Car from "./Car.vue";
+import Car from "./Car4.vue";
 export default {
   data() {
     return {
@@ -73,8 +73,8 @@ export default {
   div.mapCar{
       display: grid;
       height: 100%;
-      grid-template-columns:minmax(480px, auto) minmax(450px, 600px) ;
-      grid-template-rows: 120px auto;
+      grid-template-columns:1fr 570px ;
+      grid-template-rows: 20px 1fr;
       grid-row-gap: 15px;
       overflow: hidden;
   }
