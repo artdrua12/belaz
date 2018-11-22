@@ -1,11 +1,12 @@
 <template>
   <div class="mapCar">
       <div class="google-map" id="map"></div>
-      <v-btn @click="add"></v-btn>  
+      <car class="car"></car> 
   </div>
 </template>
 
 <script>
+import Car from "./Car.vue";
 export default {
   data() {
     return {
@@ -61,18 +62,52 @@ export default {
         }
       });
     }
+  },
+  components: {
+    Car
   }
 };
 </script>
 <style scoped>
-div.mapCar {
-  widows: 100%;
-  height: 100%;
+@media(min-width: 981px){
+  div.mapCar{
+      display: grid;
+      height: 100%;
+      grid-template-columns:minmax(480px, auto) minmax(450px, 600px) ;
+      grid-template-rows: 120px auto;
+      grid-row-gap: 15px;
+      overflow: hidden;
+  }
+  .google-map{
+      grid-column: 1 / 3;
+      grid-row: 1 / 3; 
+  }
+  .car{
+      grid-column: 2 / 3;
+      grid-row: 2 / 3; 
+      z-index: 2;
+      overflow: auto;
+  }
 }
-.google-map {
-  width: 100%;
-  height: 90%;
-  margin: 0 auto;
-  background: gray;
+
+@media(max-width: 980px){
+   div.mapCar{
+      display: grid;
+      height: 100%;
+      grid-template-columns: 1fr ;
+      grid-template-rows: minmax(55%, 2fr) auto;
+      grid-row-gap: 15px;
+      overflow: hidden;
+  }
+  .google-map{
+      grid-column: 1 / 2;
+      grid-row: 1 / 3; 
+  }
+  .car{
+      grid-column: 1 / 2;
+      grid-row: 2 / 3; 
+      z-index: 2;
+      overflow: auto;
+  }
 }
 </style>
