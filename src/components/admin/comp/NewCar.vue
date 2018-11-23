@@ -1,6 +1,6 @@
 <template>
   <div class="adminComp">
-      <p class="top">Добавить новую машину</p>
+     <i class="material-icons iconColor">local_shipping</i> <p class="top">Добавить новую машину</p>
         <div class="contx">
         <v-text-field class="inputText"
             v-model="name"
@@ -15,6 +15,7 @@
         <v-select
           :items="items"
           label="Выберите модуль"
+          dark
         ></v-select>
 
         <v-menu
@@ -56,6 +57,7 @@
             label="Дата начала эксплуатации"
             prepend-icon="event"
             readonly
+            dark
             ></v-text-field>
             <v-date-picker v-model="date2" no-title scrollable>
             <v-spacer></v-spacer>
@@ -69,6 +71,7 @@
             :counter="10"
             name="description" 
             label="Введите описание"
+            dark
         ></v-text-field>
         </div>
         <v-btn color="red" dark>Добавить</v-btn>    
@@ -103,15 +106,21 @@ p {
   font-size: 24px;
   width: 100%;
   text-align: center;
+  color: rgb(255, 217, 0);
 }
 button {
-    float:right;
-    margin-right: -5px;
-    margin-top: 25px;
-    }
-div.v-menu__content, div.menuable__content__active{
-    top:0px!important;
-    left:0px!important;
+  float: right;
+  margin-right: -5px;
+  margin-top: 25px;
+}
+div.v-menu__content,
+div.menuable__content__active {
+  top: 0px !important;
+  left: 0px !important;
+}
+.iconColor {
+  font-size: 50px;
+  color: red;
 }
 </style>
 

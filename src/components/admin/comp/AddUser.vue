@@ -1,6 +1,6 @@
 <template>
   <div class="adminComp">
-      <p class="top">Добавить пользователя</p>
+     <i class="material-icons iconColor">people</i><p class="top">Добавить пользователя</p>
         <div class="contx">
         <v-text-field class="inputText"
             v-model="login"
@@ -9,6 +9,7 @@
             name="login" 
             label="Введите login"
             required
+            dark
         ></v-text-field> 
 
         <v-text-field class="inputText"
@@ -17,6 +18,7 @@
             :counter="10"
             name="name" 
             label="Введите имя"
+            dark
         ></v-text-field> 
 
         <v-text-field class="inputText"
@@ -25,6 +27,7 @@
             :counter="10"
             name="surname" 
             label="Введите фамилию"
+            dark
         ></v-text-field> 
 
         <v-text-field class="inputText"
@@ -33,16 +36,19 @@
             :counter="10"
             name="password" 
             label="Введите пароль"
+            dark
         ></v-text-field> 
 
         <v-select
           :items="items"
           label="Выберите роль пользователя"
+          dark
         ></v-select>
 
         <v-select
           :items="items"
           label="Выберите организацию пользователя"
+          dark
         ></v-select>
 
         </div>
@@ -76,12 +82,18 @@ p {
   font-size: 24px;
   width: 100%;
   text-align: center;
+  color: rgb(255, 217, 0);
 }
 button {
-    float:right;
-    margin-right: -5px;
-    }
+  float: right;
+  margin-right: -5px;
+  margin-top: 25px;
+}
 
+.iconColor {
+  font-size: 50px;
+  color: red;
+}
 </style>
 
 
