@@ -78,12 +78,8 @@ import CarItem from './CarItem4.vue'
 </script>
 
 <style scoped>
-.app{
-   
-}
 .content{
   height: 0%;
-  overflow: auto;
-  color: black
+  padding-right:  10px
 }
 </style>

@@ -74,7 +74,7 @@ export default {
       display: grid;
       height: 100%;
       grid-template-columns:1fr 570px ;
-      grid-template-rows: 20px 1fr;
+      grid-template-rows: 10px 1fr;
       grid-row-gap: 15px;
       overflow: hidden;
   }

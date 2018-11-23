@@ -11,6 +11,7 @@
             <p class="Item3">id:{{item.id}}</p>
             <p class="Item4">{{item.model}}</p>
             <p class="Item5"> SerialNumber: {{item.serial}}</p>
+            <div class="Item6" v-bind:style="{'background-color': color}"></div>
         </div>
     </div>
   </div>
@@ -50,58 +51,62 @@ div.app {
 div.top {
   grid-column: 1 /2;
   grid-row: 1 / 2;
-  display: flex;
 }
 div.content {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   /* border: 1px solid red; */
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   overflow: auto;
-  height: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 div.item {
-  width: 250px;
-  display: flex;
+  width: 260px;
+  height: 100px;
   margin-top: 40px;
-  margin-right: 12px;
+  /* margin-right: 16px; */
   border: 3px solid;
   color: white;
-  background: linear-gradient(rgba(87, 88, 83, 0.4), rgba(71, 72, 77,0.5)) rgba(82, 82, 76, 0.5);
+  background: linear-gradient(rgba(87, 88, 83, 0.4), rgba(77, 76, 71, 0.5))
+    rgba(82, 82, 76, 0.5);
   display: grid;
-    grid-template-columns:repeat(3,auto);
-    grid-template-rows:repeat(4,auto);
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
 }
-.Item1{
-      grid-column: 1 / 2;
-      grid-row: 1 / 2; 
-      padding: 0px;
-      margin: 0px;
+.Item1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  padding: 0px;
+  margin: 0px;
 }
-.Item2{
-      grid-column: 1 / 3;
-      grid-row: 1 / 3; 
-      width: 140px;
+.Item2 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  width: 140px;
+  margin-left: 15px;
 }
-.Item3{
-      grid-column: 3 / 4;
-      grid-row: 1 / 2;
-      align-items:start;
-      
+.Item3 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  align-self: start;
 }
-.Item4{
-      grid-column: 3 / 4;
-      grid-row: 1 / 2; 
-      align-items:end;
-      align-content: end;
+.Item4 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  align-self: end;
 }
-.Item5{
-      grid-column: 1 / 4;
-      grid-row: 3 / 4; 
-      height: 10px;
-      justify-items:end;
+.Item5 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  height: 10px;
+  justify-items: end;
+}
+.Item6 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  width: 90%;
+  justify-items: end;
 }
 </style>
 
