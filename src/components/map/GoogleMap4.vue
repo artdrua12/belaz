@@ -35,8 +35,8 @@ export default {
     for (let i = 0; i < this.markers.length; i++) {
       new google.maps.Marker({
         position: new google.maps.LatLng(
-          this.markers[i].position.latitude,
-          this.markers[i].position.longitude
+          // this.markers[i].position.latitude,
+          // this.markers[i].position.longitude
         ),
         title: "Hello World!",
         map: this.map,
@@ -50,10 +50,13 @@ export default {
   },
   methods: {
     add() {
-      this.map.setCenter({ lat: 59.9, lng: 30.4 });
+      this.map.setCenter({
+        lat: 59.93,
+        lng: 29.93
+      });
       this.markers.push(
         new google.maps.Marker({
-          position: new google.maps.LatLng(59.9, 30.4),
+          position: new google.maps.LatLng(55.93, 29.93),
           map: this.map,
           animation: google.maps.Animation.DROP,
           icon: {
@@ -62,9 +65,6 @@ export default {
           }
         })
       );
-    },
-    remove(){
-      
     }
   },
   components: {

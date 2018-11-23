@@ -80,6 +80,6 @@ import CarItem from './CarItem4.vue'
 <style scoped>
 .content{
   height: 0%;
-  padding-right:  10px;
+  padding-right:10px;
 }
 </style>

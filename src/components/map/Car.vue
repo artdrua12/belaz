@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import CarItem from './CarItem.vue'
+import CarItem from './CarItem3.vue'
   export default {
     data () {
       return {
@@ -79,8 +79,7 @@ import CarItem from './CarItem.vue'
 
 <style scoped>
 .content{
-  height: 0%;
   overflow: auto;
-  color: black
+  padding-right: 10px;
 }
 </style>

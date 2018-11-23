@@ -48,8 +48,8 @@ data() {
   div.app{
       display: grid;
       height: 100%;
-      grid-template-columns:minmax(480px, auto) minmax(450px, 600px) ;
-      grid-template-rows: 120px auto;
+      grid-template-columns:1fr 560px;;
+      grid-template-rows: 320px auto;
       grid-row-gap: 15px;
       overflow: hidden;
   }
