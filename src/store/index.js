@@ -5,13 +5,20 @@ Vue.use(Vuex)
  const store = new Vuex.Store({
      state: {
          mapArray:[[],[],[],[],[],[],[]],
-         googleArray:[]
+         mapArray4:[[],[],[],[],[],[],[]]
      },
      getters:{
         allMapArray: state =>{
             let temp = [];
             for (let index = 0; index < state.mapArray.length; index++) {
                 temp.push(...state.mapArray[index]);
+            }
+            return temp
+        },
+        allMapArray4: state =>{
+            let temp = [];
+            for (let index = 0; index < state.mapArray4.length; index++) {
+                temp.push(...state.mapArray2[index]);
             }
             return temp
         }
@@ -24,7 +31,12 @@ Vue.use(Vuex)
          Vue.set(state.mapArray,Number(number),colorArray); 
          // особенности реактивности 
          //state.mapArray[Number(number)]=colorArray
-        }
+        },
+        MAP_ARRAY4(state,{colorArray,number}){
+            Vue.set(state.mapArray,Number(number),colorArray); 
+            // особенности реактивности 
+            //state.mapArray[Number(number)]=colorArray
+           }
      },
      actions:{
      }
