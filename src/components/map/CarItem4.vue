@@ -4,7 +4,8 @@
          v-on:change="onChange" value="true" width="150px"></v-switch>
     <div class="content">
         <div class="item" v-for="(item,i) in dataitem" :key="i" v-bind:style="{'border-color': color}">       
-            <v-checkbox dark v-model="selected"  color="white"  :value="item.id" class="Item1"></v-checkbox>
+            <v-checkbox dark v-model="selected"  color="white"  :value="item.id"
+            class="Item1" @change="onChangetd"></v-checkbox>
             <img src="./1.png" class="Item2">
             <p class="Item3">id:{{item.id}}</p>
             <p class="Item4">{{item.model}}</p>
@@ -33,6 +34,11 @@ export default {
       } else if (this.swtch != "true") {
         this.selected = [];
       }
+    },
+    onChangetd() {
+      this.dataitem.length == this.selected.length
+        ? (this.swtch = "true")
+        : (this.swtch = "");
     }
   }
 };

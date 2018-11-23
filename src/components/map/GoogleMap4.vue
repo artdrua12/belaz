@@ -62,6 +62,9 @@ export default {
           }
         })
       );
+    },
+    remove(){
+      
     }
   },
   components: {
