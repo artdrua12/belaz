@@ -61,7 +61,7 @@ import CarItem from './CarItem4.vue'
     computed: {
       color () {
         switch (this.active) {
-          case 0: return 'black'
+          case 0: return '#474444'
           case 1: return 'teal'
           case 2: return '#751111'
           case 3: return '#11328d'
@@ -80,6 +80,6 @@ import CarItem from './CarItem4.vue'
 <style scoped>
 .content{
   height: 0%;
-  padding-right:  10px
+  padding-right:  10px;
 }
 </style>

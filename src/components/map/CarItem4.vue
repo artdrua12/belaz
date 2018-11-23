@@ -1,9 +1,7 @@
 <template>
   <div class="app">
-    <div class="top">
-         <p><v-switch v-model="swtch" :color="color" 
-         v-on:change="onChange" value="true"></v-switch></p>
-    </div>
+    <v-switch v-model="swtch" :color="color" class="switch" 
+         v-on:change="onChange" value="true" width="150px"></v-switch>
     <div class="content">
         <div class="item" v-for="(item,i) in dataitem" :key="i" v-bind:style="{'border-color': color}">       
             <v-checkbox dark v-model="selected"  color="white"  :value="item.id" class="Item1"></v-checkbox>
@@ -44,13 +42,15 @@ export default {
 div.app {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 10px auto;
+  grid-template-rows: 20px auto;
   position: relative;
-  overflow: auto;
 }
-div.top {
-  grid-column: 1 /2;
+.switch {
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
+  padding: 0px;
+  margin: 7px 0px 0px 0px;
+  padding-left: 10px;
 }
 div.content {
   grid-column: 1 / 2;
@@ -64,12 +64,15 @@ div.content {
 div.item {
   width: 260px;
   height: 100px;
-  margin-top: 40px;
+  margin-top: 25px;
   /* margin-right: 16px; */
-  border: 3px solid;
+  border: 2px solid;
   color: white;
-  background: linear-gradient(rgba(87, 88, 83, 0.4), rgba(77, 76, 71, 0.5))
-    rgba(82, 82, 76, 0.5);
+  background: linear-gradient(
+      rgba(118, 119, 112, 0.4),
+      rgba(109, 108, 103, 0.5)
+    )
+    rgba(104, 104, 98, 0.5);
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);

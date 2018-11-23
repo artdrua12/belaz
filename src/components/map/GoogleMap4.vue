@@ -1,5 +1,6 @@
 <template>
   <div class="mapCar">
+      <v-btn @click="add">Adding</v-btn>
       <div class="google-map" id="map"></div>
       <car class="car"></car> 
   </div>
@@ -11,7 +12,6 @@ export default {
   data() {
     return {
       map: "",
-      markerImage: "",
       markers: [
         {
           position: { latitude: 59.93, longitude: 30.32 }
@@ -51,16 +51,17 @@ export default {
   methods: {
     add() {
       this.map.setCenter({ lat: 59.9, lng: 30.4 });
-      new google.maps.Marker({
-        position: new google.maps.LatLng(59.9, 30.4),
-        title: "Hello World!",
-        map: this.map,
-        animation: google.maps.Animation.DROP,
-        icon: {
-          url: "src/components/map/belaz.png",
-          scaledSize: new google.maps.Size(64, 55)
-        }
-      });
+      this.markers.push(
+        new google.maps.Marker({
+          position: new google.maps.LatLng(59.9, 30.4),
+          map: this.map,
+          animation: google.maps.Animation.DROP,
+          icon: {
+            url: "src/components/map/belaz.png",
+            scaledSize: new google.maps.Size(64, 55)
+          }
+        })
+      );
     }
   },
   components: {
@@ -69,45 +70,45 @@ export default {
 };
 </script>
 <style scoped>
-@media(min-width: 981px){
-  div.mapCar{
-      display: grid;
-      height: 100%;
-      grid-template-columns:1fr 570px ;
-      grid-template-rows: 10px 1fr;
-      grid-row-gap: 15px;
-      overflow: hidden;
+@media (min-width: 981px) {
+  div.mapCar {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 570px;
+    grid-template-rows: 10px 1fr;
+    grid-row-gap: 15px;
+    overflow: hidden;
   }
-  .google-map{
-      grid-column: 1 / 3;
-      grid-row: 1 / 3; 
+  .google-map {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
   }
-  .car{
-      grid-column: 2 / 3;
-      grid-row: 2 / 3; 
-      z-index: 2;
-      overflow: auto;
+  .car {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    z-index: 2;
+    overflow: auto;
   }
 }
 
-@media(max-width: 980px){
-   div.mapCar{
-      display: grid;
-      height: 100%;
-      grid-template-columns: 1fr ;
-      grid-template-rows: minmax(55%, 2fr) auto;
-      grid-row-gap: 15px;
-      overflow: hidden;
+@media (max-width: 980px) {
+  div.mapCar {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(55%, 2fr) auto;
+    grid-row-gap: 15px;
+    overflow: hidden;
   }
-  .google-map{
-      grid-column: 1 / 2;
-      grid-row: 1 / 3; 
+  .google-map {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
   }
-  .car{
-      grid-column: 1 / 2;
-      grid-row: 2 / 3; 
-      z-index: 2;
-      overflow: auto;
+  .car {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    z-index: 2;
+    overflow: auto;
   }
 }
 </style>
