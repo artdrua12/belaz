@@ -1,6 +1,6 @@
 <template>
   <div class="mapCar">
-      <v-btn @click="add2">Adding</v-btn>
+      <v-btn @click="add">Adding</v-btn>
       <div class="google-map" id="map"></div>
       <car class="car"></car> 
   </div>
@@ -77,7 +77,7 @@ export default {
     }
   },
   methods: {
-    add() {
+    removeMarkers() {
       this.map.setCenter({
         lat: 59.93,
         lng: 29.93
@@ -94,7 +94,7 @@ export default {
         })
       );
     },
-    add2() {
+   removeMarkers() {
       for (let i = 0; i < this.markers.length; i++) {
          this.markers[i].setMap(null);       
       }
