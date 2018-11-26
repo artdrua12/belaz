@@ -124,6 +124,12 @@ button {
   font-size: 50px;
   color: red;
 }
+
+div.v-menu__content,
+div.menuable__content__active {
+  top: 0px !important;
+  left: 0px !important;
+}
 </style>
 
 
