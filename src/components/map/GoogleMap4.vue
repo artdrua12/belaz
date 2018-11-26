@@ -51,6 +51,7 @@ export default {
   },
   watch: {
     mapData() {
+      this.add2();
       for (let i = 0; i < this.mapData.length; i++) {
         this.map.setCenter(
           new google.maps.LatLng(
@@ -72,18 +73,6 @@ export default {
             }
           })
         );
-        // this.markers[i] = new google.maps.Marker({
-        //   position: new google.maps.LatLng(
-        //     this.mapData[i].position.lat,
-        //     this.mapData[i].position.lng
-        //   ),
-        //   map: this.map,
-        //   animation: google.maps.Animation.DROP,
-        //   icon: {
-        //     url: "src/components/map/belaz.png",
-        //     scaledSize: new google.maps.Size(64, 55)
-        //   }
-        // });
       }
     }
   },

@@ -1,6 +1,5 @@
 <template>
   <div class="app">
-    <p>{{colorArray}}</p>
     <v-switch v-model="swtch" :color="color" class="switch" 
          v-on:change="onChange" value="true" width="150px"></v-switch>
     <div class="content">
