@@ -1,11 +1,12 @@
 <template>
   <div class="app">
+    <p>{{colorArray}}</p>
     <v-switch v-model="swtch" :color="color" class="switch" 
          v-on:change="onChange" value="true" width="150px"></v-switch>
     <div class="content">
         <div class="item" v-for="(item,i) in dataitem" :key="i" v-bind:style="{'border-color': color}">       
-            <v-checkbox dark v-model="selected"  color="white"  :value="item.id"
-            class="Item1" @change="onChangetd"></v-checkbox>
+            <v-checkbox dark v-model="selected"  color="white"  :value="item.coordinats"
+            class="Item1" @change="onChangeCh"></v-checkbox>
             <img src="./1.png" class="Item2">
             <p class="Item3">id:{{item.id}}</p>
             <p class="Item4">{{item.model}}</p>
@@ -18,7 +19,7 @@
 
 <script>
 export default {
-  props: ["dataitem", "color"],
+  props: ["dataitem", "color","number"],
   data() {
     return {
       selected: [],
@@ -29,16 +30,36 @@ export default {
     onChange() {
       if (this.swtch == "true") {
         for (let i = 0; i < this.dataitem.length; i++) {
-          this.selected.push(this.dataitem[i].id);
+          this.selected.push(this.dataitem[i].coordinats);
         }
       } else if (this.swtch != "true") {
         this.selected = [];
       }
+      this.$store.commit("MAP_ARRAY4", {
+        colorArray: this.colorArray,
+        number: this.number
+      });
     },
-    onChangetd() {
+    onChangeCh() {
       this.dataitem.length == this.selected.length
         ? (this.swtch = "true")
         : (this.swtch = "");
+      this.$store.commit("MAP_ARRAY4", {
+        colorArray: this.colorArray,
+        number: this.number
+      });
+    }
+  },
+  computed: {
+    colorArray() {
+      let temp = [];
+      for (let i = 0; i < this.selected.length; i++) {
+        temp[i] = {
+          position: this.selected[i],
+          color: this.color
+        };
+      }
+      return temp;
     }
   }
 };

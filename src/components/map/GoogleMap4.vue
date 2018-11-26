@@ -1,6 +1,6 @@
 <template>
   <div class="mapCar">
-      <v-btn @click="add">Adding</v-btn>
+      <v-btn @click="add2">Adding</v-btn>
       <div class="google-map" id="map"></div>
       <car class="car"></car> 
   </div>
@@ -13,30 +13,31 @@ export default {
     return {
       map: "",
       markers: [
-        {
-          position: { latitude: 59.93, longitude: 30.32 }
-        },
-        {
-          position: { latitude: 59.928, longitude: 30.32 }
-        }
-      ]
+        // {
+        //   position: { latitude: 60.93, longitude: 28.32 }
+        // },
+        // {
+        //   position: { latitude: 54.928, longitude: 32.32 }
+        // }
+      ],
+      m: ""
     };
   },
   computed: {
-    mapMarkers: function() {
-      return this.markers;
+    mapData() {
+      return this.$store.getters.allMapArray4;
     }
   },
   mounted() {
     this.map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 12,
+      zoom: 5,
       center: { lat: 59.93, lng: 30.32 }
     });
     for (let i = 0; i < this.markers.length; i++) {
-      new google.maps.Marker({
+      this.m = new google.maps.Marker({
         position: new google.maps.LatLng(
-          // this.markers[i].position.latitude,
-          // this.markers[i].position.longitude
+          this.markers[i].position.latitude,
+          this.markers[i].position.longitude
         ),
         title: "Hello World!",
         map: this.map,
@@ -46,6 +47,44 @@ export default {
           scaledSize: new google.maps.Size(64, 55)
         }
       });
+    }
+  },
+  watch: {
+    mapData() {
+      for (let i = 0; i < this.mapData.length; i++) {
+        this.map.setCenter(
+          new google.maps.LatLng(
+            this.mapData[i].position.lat,
+            this.mapData[i].position.lng
+          )
+        );
+        this.markers.push(
+          new google.maps.Marker({
+            position: new google.maps.LatLng(
+              this.mapData[i].position.lat,
+              this.mapData[i].position.lng
+            ),
+            map: this.map,
+            animation: google.maps.Animation.DROP,
+            icon: {
+              url: "src/components/map/belaz.png",
+              scaledSize: new google.maps.Size(64, 55)
+            }
+          })
+        );
+        // this.markers[i] = new google.maps.Marker({
+        //   position: new google.maps.LatLng(
+        //     this.mapData[i].position.lat,
+        //     this.mapData[i].position.lng
+        //   ),
+        //   map: this.map,
+        //   animation: google.maps.Animation.DROP,
+        //   icon: {
+        //     url: "src/components/map/belaz.png",
+        //     scaledSize: new google.maps.Size(64, 55)
+        //   }
+        // });
+      }
     }
   },
   methods: {
@@ -65,6 +104,12 @@ export default {
           }
         })
       );
+    },
+    add2() {
+      for (let i = 0; i < this.markers.length; i++) {
+         this.markers[i].setMap(null);       
+      }
+      // this.markers[2].setMap(null);
     }
   },
   components: {

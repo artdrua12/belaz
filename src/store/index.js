@@ -18,7 +18,7 @@ Vue.use(Vuex)
         allMapArray4: state =>{
             let temp = [];
             for (let index = 0; index < state.mapArray4.length; index++) {
-                temp.push(...state.mapArray2[index]);
+                temp.push(...state.mapArray4[index]);
             }
             return temp
         }
@@ -33,7 +33,7 @@ Vue.use(Vuex)
          //state.mapArray[Number(number)]=colorArray
         },
         MAP_ARRAY4(state,{colorArray,number}){
-            Vue.set(state.mapArray,Number(number),colorArray); 
+            Vue.set(state.mapArray4,Number(number),colorArray); 
             // особенности реактивности 
             //state.mapArray[Number(number)]=colorArray
            }
